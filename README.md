@@ -1,1 +1,1 @@
-#Makeup Inventory Tracker
+Makeup Inventory Tracker
