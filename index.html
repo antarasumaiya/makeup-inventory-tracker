@@ -3,76 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Makeup Inventory Management</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Makeup Inventory Tracker</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Makeup Inventory Management</h1>
-    </header>
-
-    <div class="container">
-        <!-- Add New Item Section -->
-        <section class="add-item">
-            <h2>Add New Makeup Item</h2>
-            <form id="addForm">
-                <label for="name">Product Name:</label>
-                <input type="text" id="name" required>
-
-                <label for="brand">Brand:</label>
-                <input type="text" id="brand" required>
-
-                <label for="category">Category:</label>
-                <input type="text" id="category" required>
-
-                <label for="quantity">Quantity:</label>
-                <input type="number" id="quantity" required>
-
-                <label for="expiry">Expiry Date:</label>
-                <input type="date" id="expiry" required>
-
-                <button type="submit">Add Item</button>
-            </form>
-        </section>
-
-        <!-- Search & Filter Section -->
-        <section class="search-filter">
-            <h2>Search & Filter</h2>
-            <input type="text" id="search" placeholder="Search by product name">
-
-            <select id="filterCategory">
-                <option value="">Filter by Category</option>
-            </select>
-
-            <select id="filterBrand">
-                <option value="">Filter by Brand</option>
-            </select>
-        </section>
-
-        <!-- Inventory List Section -->
-        <section class="inventory-list">
-            <h2>Inventory List</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Product Name</th>
-                        <th>Brand</th>
-                        <th>Category</th>
-                        <th>Quantity</th>
-                        <th>Expiry Date</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody id="inventoryTable">
-                    <!-- Inventory items will be listed here -->
-                </tbody>
-            </table>
-        </section>
+    <h1>Makeup Inventory Tracker</h1>
+    <div id="productForm">
+        <h2>Add Product</h2>
+        <input type="text" id="productName" placeholder="Name">
+        <input type="text" id="productBrand" placeholder="Brand">
+        <input type="text" id="productCategory" placeholder="Category">
+        <input type="number" id="productQuantity" placeholder="Quantity">
+        <input type="number" id="productPrice" placeholder="Price">
+        <input type="date" id="productExpiry" placeholder="Expiry Date">
+        <button onclick="addProduct()">Add Product</button>
     </div>
 
-    <footer>
-        <p>&copy; 2024 Makeup Inventory Management</p>
-    </footer>
+    <div id="productList">
+        <h2>Product List</h2>
+        <input type="text" id="searchName" placeholder="Search by Name">
+        <button onclick="searchProducts()">Search</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Brand</th>
+                    <th>Price</th>
+                    <th>Select</th>
+                </tr>
+            </thead>
+            <tbody id="inventoryTable"></tbody>
+        </table>
+        <button onclick="generateInvoice()">Generate Invoice</button>
+    </div>
 
     <script src="script.js"></script>
 </body>
